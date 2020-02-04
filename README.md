@@ -1,4 +1,4 @@
-# frontend
+# low-price-ticketMiningSystem-frontendPart
 
 ## Project setup
 ```
