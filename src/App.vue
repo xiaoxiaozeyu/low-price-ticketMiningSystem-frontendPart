@@ -1,16 +1,21 @@
 <template>
   <div id="app">
+    <main-tab-bar></main-tab-bar>
     
   </div>
 </template>
 
 <script>
-export default {
-  name: 'app',
-  components:{
+  import MainTabBar from 'components/content/mainTabbar/MainTabBar'
 
+
+  export default {
+    name: 'app',
+    components:{
+      MainTabBar
+
+    }
   }
-}
 </script>
 
 <style>
