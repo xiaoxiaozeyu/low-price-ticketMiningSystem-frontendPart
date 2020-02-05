@@ -5,7 +5,7 @@
       <img slot="item-icon-active" src="~assets/img/tabbar/home_active.svg" alt="">
       <div slot="item-text">首页</div>
     </tab-bar-item>
-    <tab-bar-item path="/flightDynamics">
+    <tab-bar-item path="/flight">
       <img slot="item-icon" src="~assets/img/tabbar/flight.svg" alt="">
       <img slot="item-icon-active" src="~assets/img/tabbar/flight_active.svg" alt="">
       <div slot="item-text">航班动态</div>
