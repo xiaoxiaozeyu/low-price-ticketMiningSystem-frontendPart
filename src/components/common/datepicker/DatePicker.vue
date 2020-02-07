@@ -36,7 +36,7 @@
 </template>
 
 <script>
-  import * as utils from '../util'
+  import * as utils from 'common/util'
 
   export default {
     name: 'DatePicker',
