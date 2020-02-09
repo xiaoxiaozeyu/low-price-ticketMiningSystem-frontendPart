@@ -28,7 +28,7 @@
               {{visibeDays[(i-1)*7+(j-1)].getDate()}}
             </span>
           </div>
-        </div>y
+        </div>
       </div>
       <div class="pannel-footer" @click="jumpToday"><button>选择今天</button></div>
     </div>
@@ -204,7 +204,7 @@
   }
 
   .notCurrentMonth {
-    color: #808080;
+    color: gray;
   }
 
   .today {
