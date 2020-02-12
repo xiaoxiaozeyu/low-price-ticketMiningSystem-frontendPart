@@ -1,21 +1,25 @@
 <template>
   <div id="home">
     <nav-bar class="home-nav"><div slot="center">首页</div></nav-bar>
-    <h2>Home Page</h2>
-    <!--  -->
-<!--    <div><date-picker v-model="startDate"></date-picker></div>-->
-<!--    <div v-if="result">-->
-<!--      <h3>{{ result }}</h3>-->
-<!--      <h3>{{ result.data }}</h3>-->
-<!--      <h3>{{ result.ret }}</h3>-->
-<!--    </div>-->
-    <ticket-search  ></ticket-search>
+
+     <h2>Home Page</h2>
+     <!--  -->
+     <!--    <div><date-picker v-model="startDate"></date-picker></div>-->
+     <!--    <div v-if="result">-->
+     <!--      <h3>{{ result }}</h3>-->
+     <!--      <h3>{{ result.data }}</h3>-->
+     <!--      <h3>{{ result.ret }}</h3>-->
+     <!--    </div>-->
+     <ticket-search  ></ticket-search>
+
+
   </div>
 </template>
 
 <script>
   import NavBar from 'components/common/navbar/NavBar'
   import DatePicker from 'components/common/datepicker/DatePicker'
+  import Scroll from "../../components/common/scroll/Scroll";
 
   import TicketSearch from "./childComponents/TicketSearch";
 
@@ -26,7 +30,8 @@
     components: {
       NavBar,
       DatePicker,
-      TicketSearch
+      TicketSearch,
+      Scroll
     },
     data() {
       return {
@@ -48,6 +53,7 @@
 <style scoped>
   #home {
     padding-top: 44px;
+    padding-bottom: 49px;
   }
   .home-nav {
     background-color: #ff8198;

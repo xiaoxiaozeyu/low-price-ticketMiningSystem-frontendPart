@@ -1,6 +1,6 @@
 //notice:Source from east airline
 
-const homeCity = [
+const homeCityA = [
   {
     "code": "YIE",
     "name": "A阿尔山",
@@ -48,7 +48,10 @@ const homeCity = [
     "city_code": "1",
     "type": "331",
     "regexInfo": "AVA,AVA,安顺,AnShun,AS,AnShun,安顺黄果树机场,Anshun Huangguoshu Airport,ASHGSJC,AnShunHuangGuoShuJiChang"
-  },
+  }
+]
+
+const homeCityB =[
   {
     "code": "AEB",
     "name": "B百色",
@@ -89,22 +92,22 @@ const homeCity = [
     "type": "331",
     "regexInfo": "NAY,BJS,北京,BeiJingShi,BJS,BEIJING,南苑机场,NanYuanJiChang,NYJC,Beijing Nanyuan Apt,PEK,首都机场,ShouDuJiChang,SDJC,Beijing Capital Apt"
   },
-  {
-    "code": "PEK",
-    "name": "B北京首都",
-    "city": "北京首都",
-    "city_code": "0",
-    "type": "331",
-    "regexInfo": "PEK,bjsd,Beijing Shoudu,B北京首都"
-  },
-  {
-    "code": "NAY",
-    "name": "B北京南苑",
-    "city": "北京南苑",
-    "city_code": "0",
-    "type": "331",
-    "regexInfo": "NAY,bjny,Beijing Nanyuan,B北京南苑"
-  },
+  // {
+  //   "code": "PEK",
+  //   "name": "B北京首都",
+  //   "city": "北京首都",
+  //   "city_code": "0",
+  //   "type": "331",
+  //   "regexInfo": "PEK,bjsd,Beijing Shoudu,B北京首都"
+  // },
+  // {
+  //   "code": "NAY",
+  //   "name": "B北京南苑",
+  //   "city": "北京南苑",
+  //   "city_code": "0",
+  //   "type": "331",
+  //   "regexInfo": "NAY,bjny,Beijing Nanyuan,B北京南苑"
+  // },
   {
     "code": "BFJ",
     "name": "B毕节",
@@ -120,7 +123,9 @@ const homeCity = [
     "city_code": "1",
     "type": "331",
     "regexInfo": "BPE,北戴河,BeiDaiHe,QHD,BEIDAIHE,北戴河机场,BDHJC,BeiDaiHeJiChang"
-  },
+  }
+]
+const homeCityC =[
   {
     "code": "NBS",
     "name": "C长白山",
@@ -200,7 +205,9 @@ const homeCity = [
     "city_code": "1",
     "type": "331",
     "regexInfo": "CKG,CKG,重庆,ChongQing,CQ,CHONGQING,江北机场,Chongqing,JBJC,JiangBeiJiChang"
-  },
+  }
+]
+const homeCityD =[
   {
     "code": "DLU",
     "name": "D大理",
@@ -288,7 +295,9 @@ const homeCity = [
     "city_code": "1",
     "type": "331",
     "regexInfo": "DQA,DQA,大庆,daqing,DQ,DAQING,大庆,DAQING,DQ,daqing"
-  },
+  }
+]
+const homeCityE =[
   {
     "code": "DSN",
     "name": "E鄂尔多斯",
@@ -304,7 +313,9 @@ const homeCity = [
     "city_code": "1",
     "type": "331",
     "regexInfo": "ENH,ENH,恩施,EnShi,ES,ENSHI,许家坪机场,Enshi,XJPJC,XuJiaPingJiChang"
-  },
+  }
+]
+const homeCityF = [
   {
     "code": "FUO",
     "name": "F佛山",
@@ -328,7 +339,9 @@ const homeCity = [
     "city_code": "1",
     "type": "331",
     "regexInfo": "FOC,FOC,福州,FuZhou,FZ,FUZHOU,长乐机场,Fuzhou,CLJC,ChangLeJiChang"
-  },
+  }
+]
+const homeCityG = [
   {
     "code": "KOW",
     "name": "G赣州",
@@ -376,7 +389,9 @@ const homeCity = [
     "city_code": "1",
     "type": "331",
     "regexInfo": "KWE,KWE,贵阳,GuiYang,GY,GUIYANG,龙洞堡机场,Guiyang,LDBJC,LongDongBaoJiChang"
-  },
+  }
+]
+const homeCityH = [
   {
     "code": "HRB",
     "name": "H哈尔滨",
@@ -488,7 +503,9 @@ const homeCity = [
     "city_code": "1",
     "type": "331",
     "regexInfo": "TXN,TXN,黄山,HuangShan,HS,TUNXI,屯溪机场,Huangshan,TXJC,TunXiJiChang"
-  },
+  }
+]
+const homeCityJ = [
   {
     "code": "TNA",
     "name": "J济南",
@@ -592,7 +609,9 @@ const homeCity = [
     "city_code": "1",
     "type": "331",
     "regexInfo": "JZH,JZH,九寨沟,JiuZhaiGou,JZG,JIUZHAIGOU,黄龙机场,JIUZHAIGOU,HLJC,HuangLongJiChang"
-  },
+  }
+]
+const homeCityK = [
   {
     "code": "KHG",
     "name": "K喀什",
@@ -640,7 +659,9 @@ const homeCity = [
     "city_code": "1",
     "type": "331",
     "regexInfo": "KMG,KMG,昆明,KunMing,KM,KUNMING,昆明长水机场,Kunming,CSJC,ChangShuiJiChang"
-  },
+  }
+]
+const homeCityL = [
   {
     "code": "LXA",
     "name": "L拉萨",
@@ -752,7 +773,9 @@ const homeCity = [
     "city_code": "1",
     "type": "331",
     "regexInfo": "LFQ,LFQ,临汾,LinFen,LF,linfen,临汾机场,LinFenJiChang,LFJC,linfenJiChang"
-  },
+  }
+]
+const homeCityM = [
   {
     "code": "NZH",
     "name": "M满洲里",
@@ -792,7 +815,9 @@ const homeCity = [
     "city_code": "1",
     "type": "331",
     "regexInfo": "MDG,MDG,牡丹江,MuDanJiang,MDJ,MUDANJIANG,海浪机场,Mudanjiang,HLJC,HaiLangJiChang"
-  },
+  }
+]
+const homeCityN = [
   {
     "code": "KHN",
     "name": "N南昌",
@@ -848,7 +873,9 @@ const homeCity = [
     "city_code": "1",
     "type": "331",
     "regexInfo": "NGB,NGB,宁波,NingBo,NB,NINGBO,栎社机场,Ningbo,LSJC,LiSheJiChang"
-  },
+  }
+]
+const homeCityP = [
   {
     "code": "SYM",
     "name": "P普洱",
@@ -856,7 +883,9 @@ const homeCity = [
     "city_code": "1",
     "type": "331",
     "regexInfo": "SYM,SYM,普洱,puer,PE,PUER,思茅机场,Simao,SMJC,SiMaoJiChang"
-  },
+  }
+]
+const homeCityQ = [
   {
     "code": "NDG",
     "name": "Q齐齐哈尔",
@@ -904,7 +933,9 @@ const homeCity = [
     "city_code": "1",
     "type": "331",
     "regexInfo": "JJN,JJN,泉州,QuanZhou,QZ,JINJIANG,晋江机场,Jinjiang,JJJC,JinJiangJiChang"
-  },
+  }
+]
+const homeCityR = [
   {
     "code": "RIZ",
     "name": "R日照",
@@ -912,7 +943,9 @@ const homeCity = [
     "city_code": "1",
     "type": "331",
     "regexInfo": "RIZ,RIZ,日照,RiZhao,RIZ,RIZHAO,山字河,RIZHAO,RIZ,ShanZiHe"
-  },
+  }
+]
+const homeCityS = [
   {
     "code": "SWA",
     "name": "S汕头",
@@ -929,22 +962,22 @@ const homeCity = [
     "type": "331",
     "regexInfo": "PVG,SHA,上海,ShangHai,SH,SHANGHAI,浦东机场,PuDongJiChang,PDJC,Shanghai Pu Dong Apt,SHA,虹桥机场,HongQiaoJiChang,HQJC,Shanghai Hongqiao"
   },
-  {
-    "code": "SHA",
-    "name": "S上海虹桥",
-    "city": "上海",
-    "city_code": "0",
-    "type": "331",
-    "regexInfo": "SHA,shhq,Shanghai Hongqiao,S上海虹桥"
-  },
-  {
-    "code": "PVG",
-    "name": "S上海浦东",
-    "city": "上海",
-    "city_code": "0",
-    "type": "331",
-    "regexInfo": "PVG,shpd,Shanghai Pu Dong,S上海浦东"
-  },
+  // {
+  //   "code": "SHA",
+  //   "name": "S上海虹桥",
+  //   "city": "上海",
+  //   "city_code": "0",
+  //   "type": "331",
+  //   "regexInfo": "SHA,shhq,Shanghai Hongqiao,S上海虹桥"
+  // },
+  // {
+  //   "code": "PVG",
+  //   "name": "S上海浦东",
+  //   "city": "上海",
+  //   "city_code": "0",
+  //   "type": "331",
+  //   "regexInfo": "PVG,shpd,Shanghai Pu Dong,S上海浦东"
+  // },
   {
     "code": "HPG",
     "name": "S神农架",
@@ -984,7 +1017,9 @@ const homeCity = [
     "city_code": "1",
     "type": "331",
     "regexInfo": "SYX,SYX,三亚,sanya,SY,SANYA,凤凰机场,Sanya,FHJC,FengHuangJiChang"
-  },
+  }
+]
+const homeCityT = [
   {
     "code": "TNN",
     "name": "T台南",
@@ -1056,7 +1091,9 @@ const homeCity = [
     "city_code": "1",
     "type": "331",
     "regexInfo": "TEN,TEN,铜仁,TongRen,TR,TONGREN,铜仁凤凰机场,Tongren,DXJC,DaXingJiChang"
-  },
+  }
+]
+const homeCityW = [
   {
     "code": "WXN",
     "name": "W万州",
@@ -1144,7 +1181,9 @@ const homeCity = [
     "city_code": "1",
     "type": "331",
     "regexInfo": "WUT,WUT,五台山,WuTaiShan,WTS,WUTAISHAN,五台山机场,WuTaiShan,WTSJC,WuTaiShanJiChang"
-  },
+  }
+]
+const homeCityX = [
   {
     "code": "SIA",
     "name": "X西安",
@@ -1224,7 +1263,9 @@ const homeCity = [
     "city_code": "1",
     "type": "331",
     "regexInfo": "XUZ,XUZ,徐州,XuZhou,XZ,XUZHOU,徐州观音机场,Xuzhou,GYJC,GuanYinJiChang"
-  },
+  }
+]
+const homeCityY = [
   {
     "code": "ENY",
     "name": "Y延安",
@@ -1352,7 +1393,9 @@ const homeCity = [
     "city_code": "1",
     "type": "331",
     "regexInfo": "YKH,YKH,营口,YiKou,YK,YINGKOU,兰旗机场,YINGKOU,LQJC,LanQiJiChang"
-  },
+  }
+]
+const homeCityZ = [
   {
     "code": "ZHA",
     "name": "Z湛江",
@@ -1433,4 +1476,11 @@ const homeCity = [
     "type": "331",
     "regexInfo": "ZYI,ZYI,遵义,ZunYi,ZY,ZUNYI,遵义机场,Zunyi,ZYJC,ZunYiJiChang"
   }
-];
+]
+
+
+//
+const homeCity =[ homeCityA, homeCityB, homeCityC, homeCityD, homeCityE, homeCityF, homeCityG, homeCityH, homeCityJ, homeCityK, homeCityL,homeCityM, homeCityN, homeCityP, homeCityQ, homeCityR, homeCityS, homeCityT, homeCityW, homeCityX, homeCityY, homeCityZ]
+export default homeCity
+
+// export {homeCityA, homeCityB, homeCityC, homeCityD, homeCityE, homeCityF, homeCityG, homeCityH, homeCityJ, homeCityK, homeCityL,homeCityM, homeCityN, homeCityP, homeCityQ, homeCityR, homeCityS, homeCityT, homeCityW, homeCityX, homeCityY, homeCityZ}

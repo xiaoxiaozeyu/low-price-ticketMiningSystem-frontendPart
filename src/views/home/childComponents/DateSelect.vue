@@ -1,6 +1,7 @@
 <template>
   <div>
-    <input type="text" placeholder="选择出行时间" :value="date" @click="show=true" />
+
+    <van-button plain type="primary" class="date-button" @click="show=true">{{date}}</van-button>
     <van-calendar v-model="show" @confirm="onConfirm" />
   </div>
 
@@ -12,6 +13,9 @@
   Vue.use(Cell);
   Vue.use(CellGroup);
   Vue.use(Calendar);
+  import { Button } from 'vant';
+
+  Vue.use(Button);
 
   export default {
     name: "DateSelect",
@@ -21,7 +25,7 @@
     // },
     data() {
       return {
-        date: '',
+        date: '选择出行时间',
         show: false
       };
     },
@@ -39,5 +43,11 @@
 </script>
 
 <style scoped>
-
+  .date-button {
+    width: 332px;
+    height: 32px;
+    color: #ff8198;
+    border-color: #ff8198;
+    line-height: 32px;
+  }
 </style>
