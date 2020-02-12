@@ -33,7 +33,10 @@
     },
     methods: {
       formatDate(date) {
-        return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+        const year = date.getFullYear();
+        const month = date.getMonth() + 1;
+        const day = date.getDate();   //date.getFullYear() + "-" + (mon<10?"0"+mon:mon) + "-" +(day<10?"0"+day:day);
+        return `${year}-${month<10?'0'+month:month}-${day<10?'0'+day:day}`;
       },
       onConfirm(date) {
         this.show = false;

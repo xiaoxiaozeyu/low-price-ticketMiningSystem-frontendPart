@@ -5,3 +5,14 @@ export function getHomeTestInfo() {
     url: '/'
   })
 }
+
+export function getTicketInfo(depCity,arrCity,depDate) {
+  return request({
+    url: '/getAirLineInfo',
+    params: {
+      depCity,
+      arrCity,
+      depDate
+    }
+  })
+}
