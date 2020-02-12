@@ -3,7 +3,7 @@
     <div class="outer">
       <div class="inner" style="padding-top: 14px">
         <site-select :textalign="'left'" :child-city="depCity" @get-city="setDepCity"></site-select>
-        <img src="~assets/img/home/convert.png" @click="convertCity" />
+        <img src="~assets/img/home/convert.svg" @click="convertCity" />
         <site-select :textalign="'right'" class="arr-select" :child-city="arrCity" @get-city="setArrCity"></site-select>
       </div>
     </div>
