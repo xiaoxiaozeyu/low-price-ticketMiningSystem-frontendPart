@@ -28,6 +28,9 @@
   import { Button } from 'vant';
   import Vue from 'vue';
   Vue.use(Button);
+
+  import { getTicketInfo } from 'network/home'
+
   export default {
     name: "TicketSearch",
     components: {
@@ -38,7 +41,8 @@
       return {
         startDate: '',
         depCity:'始发地',
-        arrCity:'目的地'
+        arrCity:'目的地',
+        result: ''
       }
     },
     methods: {
@@ -61,6 +65,14 @@
         const depDate = this.startDate;
         if(depCity!='始发地' && arrCity!='目的地' && depDate!='') {
           console.log(depCity)
+          console.log(arrCity)
+          console.log(depDate)
+          getTicketInfo(depCity,arrCity,depDate).then(res => {
+              console.log(res);
+              this.result = res;
+            }).catch(err=>{
+            console.log(err);
+          })
         }
       },
       convertCity() {
