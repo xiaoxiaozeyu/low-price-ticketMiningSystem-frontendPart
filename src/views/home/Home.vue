@@ -56,7 +56,7 @@
     padding-bottom: 49px;
   }
   .home-nav {
-    background-color: #ff8198;
+    background-color: #2873A8;
     color:#ffffff;
 
     position: fixed;

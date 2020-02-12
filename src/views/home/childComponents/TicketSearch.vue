@@ -1,13 +1,10 @@
 <template>
   <div id="ticketsearch">
-
-    <h2>{{startDate+"|"+depCity+"|"+arrCity}}</h2>
-
     <div class="outer">
-      <div class="inner">
-        <site-select :child-city="depCity" @get-city="setDepCity"></site-select>
-        <img src="~assets/img/home/convert.png" />
-        <site-select :child-city="arrCity" @get-city="setArrCity"></site-select>
+      <div class="inner" style="padding-top: 14px">
+        <site-select :textalign="'left'" :child-city="depCity" @get-city="setDepCity"></site-select>
+        <img src="~assets/img/home/convert.png" @click="convertCity" />
+        <site-select :textalign="'right'" class="arr-select" :child-city="arrCity" @get-city="setArrCity"></site-select>
       </div>
     </div>
     <div class="outer">
@@ -16,7 +13,7 @@
       </div>
     </div>
     <div class="outer">
-      <div class="inner">
+      <div class="inner" style="padding-bottom: 15px">
         <van-button type="primary" class="submit-button" @click="searchTicket">搜索机票</van-button>
       </div>
     </div>
@@ -65,6 +62,14 @@
         if(depCity!='始发地' && arrCity!='目的地' && depDate!='') {
           console.log(depCity)
         }
+      },
+      convertCity() {
+        const oldDep = this.depCity;
+        const oldArr = this.arrCity;
+        if(oldDep!='始发地' && oldArr!='目的地') {
+          this.depCity = oldArr;
+          this.arrCity = oldDep;
+        }
       }
     }
   }
@@ -73,18 +78,31 @@
 <style scoped>
   .outer{
     display: flex;
-    padding-top: 10px;
+    /*padding-top: 10px;*/
+    margin-top: 10px;
+    background: #ffffff;
   }
   .inner {
     display: flex;
     margin: auto;
   }
-  .submit-button {
-    background: #ff8198;
-    border-color: #ff8198;
+  .inner img {
     height: 32px;
-    line-height: 32px;
-    width: 100px;
+    margin: auto;
+  }
+  .submit-button {
+    background: #ff0000;
+    border-color: #ff0000;
+    height: 50px;
+    line-height: 50px;
+    width: 332px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  #ticketsearch {
+    margin: 10px 5px;
+    background: #ffffff;
   }
 
 </style>

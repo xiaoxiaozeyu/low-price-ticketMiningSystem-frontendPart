@@ -18,4 +18,8 @@
 
 <style>
   @import "assets/css/base.css";
+  html,body,#app{
+    height: 100%;
+    background-color: #3098E3;
+  }
 </style>

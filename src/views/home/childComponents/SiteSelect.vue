@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <van-button plain type="primary" class="site-button" @click="showPopup">{{childCity}}</van-button>
+    <van-button plain type="primary" class="site-button" :style="{textAlign:textalign}" @click="showPopup">{{childCity}}</van-button>
     <van-popup v-model="show" position="bottom"
                :style="{ height: '100%' }">
       <van-index-bar>
@@ -37,20 +37,18 @@
   export default {
     name: "SiteSelect",
     props: {
-      childCity: String
+      childCity: String,
+      textalign: String
     },
     data() {
       return {
         homeCity,
         homeCityTag: ["A","B","C","D","E","F","G","H","J","K","L","M","N","P","Q","R","S","T","W","X","Y","Z"],
-        show: false,
-        //selCity: "请选择出发地"
+        show: false
       }
     },
     methods: {
       clickCell(city) {
-        // console.log(city);
-        // this.selCity = city;
         this.$emit('get-city', city)
         this.show = false;
       },
@@ -66,17 +64,11 @@
 </script>
 
 <style scoped>
-  /*.site-select-input {*/
-  /*  hegiht:40px;*/
-  /*  width:50px*/
-  /*}*/
   .site-button {
-    height:32px;
+    height:50px;
     width:150px;
-    text-align: center;
-    vertical-align: center;
-    line-height:32px;
-    color:#ff8198;
-    border-color: #ff8198;
+    color:#000000;
+    border:none;
+    font-size: 20px;
   }
 </style>

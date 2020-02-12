@@ -1,7 +1,9 @@
 <template>
   <div>
+    <van-cell-group>
+      <van-cell class="date-cell" title="出发时间" is-link :value="date" @click="show=true" />
+    </van-cell-group>
 
-    <van-button plain type="primary" class="date-button" @click="show=true">{{date}}</van-button>
     <van-calendar v-model="show" @confirm="onConfirm" />
   </div>
 
@@ -43,11 +45,11 @@
 </script>
 
 <style scoped>
-  .date-button {
+  .date-cell {
     width: 332px;
-    height: 32px;
-    color: #ff8198;
-    border-color: #ff8198;
-    line-height: 32px;
+    height: 50px;
+    color: #000000;
+    padding-top: 15px;
+    font-size: 20px;
   }
 </style>
