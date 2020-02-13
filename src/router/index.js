@@ -5,7 +5,7 @@ const Home = () => import('views/home/Home')
 const Flight = () => import('views/flight/Flight')
 const Schedule = () => import('views/schedule/Schedule')
 const Profile = () => import('views/profile/Profile')
-
+const SearchResult = () => import('views/searchresult/SearchResult')
 
 Vue.use(VueRouter)
 
@@ -29,6 +29,10 @@ const routes = [
   {
     path: '/profile',
     component: Profile
+  },
+  {
+    path: '/searchResult',
+    component: SearchResult
   }
 ]
 

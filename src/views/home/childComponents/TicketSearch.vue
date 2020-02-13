@@ -17,19 +17,19 @@
         <van-button type="primary" class="submit-button" @click="searchTicket">搜索机票</van-button>
       </div>
     </div>
-
-
   </div>
 </template>
 
 <script>
+  import Vue from 'vue';
   import DateSelect from "./DateSelect";
   import SiteSelect from "./SiteSelect";
   import { Button } from 'vant';
-  import Vue from 'vue';
-  Vue.use(Button);
-
   import { getTicketInfo } from 'network/home'
+  Vue.use(Button);
+  import { Toast } from 'vant';
+
+  Vue.use(Toast);
 
   export default {
     name: "TicketSearch",
@@ -47,7 +47,6 @@
     },
     methods: {
       getStartDate(date) {
-        // console.log(this.startDate);
         this.startDate = date;
         // console.log(this.startDate);
       },
@@ -64,14 +63,16 @@
         const arrCity = this.arrCity;
         const depDate = this.startDate;
         if(depCity!='始发地' && arrCity!='目的地' && depDate!='') {
-          console.log(depCity)
-          console.log(arrCity)
-          console.log(depDate)
+          Toast.loading({
+            duration: 0, // 持续展示 toast
+            message: '机票查询中...',
+            forbidClick: true
+          });
           getTicketInfo(depCity,arrCity,depDate).then(res => {
-              console.log(res);
-              this.result = res;
-            }).catch(err=>{
-            console.log(err);
+            console.log(res);
+            this.result = res;
+            Toast.clear();
+            this.$router.push("searchResult");
           })
         }
       },

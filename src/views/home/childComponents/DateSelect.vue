@@ -3,8 +3,7 @@
     <van-cell-group>
       <van-cell class="date-cell" title="出发时间" is-link :value="date" @click="show=true" />
     </van-cell-group>
-
-    <van-calendar v-model="show" @confirm="onConfirm" />
+    <van-calendar v-model="show" :show-confirm="false" @confirm="onConfirm" />
   </div>
 
 </template>
@@ -15,9 +14,7 @@
   Vue.use(Cell);
   Vue.use(CellGroup);
   Vue.use(Calendar);
-  import { Button } from 'vant';
 
-  Vue.use(Button);
 
   export default {
     name: "DateSelect",
