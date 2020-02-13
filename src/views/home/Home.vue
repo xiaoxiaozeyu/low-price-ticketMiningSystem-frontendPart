@@ -58,7 +58,6 @@
   .home-nav {
     background-color: #2873A8;
     color:#ffffff;
-
     position: fixed;
     left: 0px;
     right: 0px;

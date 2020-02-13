@@ -17,22 +17,34 @@ const routes = [
   {
     path: '/home',
     name: 'home',
-    component: Home
+    component: Home,
+    meta: {
+      isShowTabBar: true
+    }
   },
   {
     path: '/flight',
     name: 'flight',
-    component: Flight
+    component: Flight,
+    meta: {
+      isShowTabBar: true
+    }
   },
   {
     path: '/schedule',
     name: 'schedule',
-    component: Schedule
+    component: Schedule,
+    meta: {
+      isShowTabBar: true
+    }
   },
   {
     path: '/profile',
     name: 'profile',
-    component: Profile
+    component: Profile,
+    meta: {
+      isShowTabBar: true
+    }
   },
   {
     path: '/searchResult',
