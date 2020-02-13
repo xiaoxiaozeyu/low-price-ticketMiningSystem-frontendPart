@@ -16,22 +16,27 @@ const routes = [
   },
   {
     path: '/home',
+    name: 'home',
     component: Home
   },
   {
     path: '/flight',
+    name: 'flight',
     component: Flight
   },
   {
     path: '/schedule',
+    name: 'schedule',
     component: Schedule
   },
   {
     path: '/profile',
+    name: 'profile',
     component: Profile
   },
   {
     path: '/searchResult',
+    name: 'searchResult',
     component: SearchResult
   }
 ]

@@ -25,7 +25,7 @@
   import DateSelect from "./DateSelect";
   import SiteSelect from "./SiteSelect";
   import { Button } from 'vant';
-  import { getTicketInfo } from 'network/home'
+
   Vue.use(Button);
   import { Toast } from 'vant';
 
@@ -41,8 +41,7 @@
       return {
         startDate: '',
         depCity:'始发地',
-        arrCity:'目的地',
-        result: ''
+        arrCity:'目的地'
       }
     },
     methods: {
@@ -68,12 +67,7 @@
             message: '机票查询中...',
             forbidClick: true
           });
-          getTicketInfo(depCity,arrCity,depDate).then(res => {
-            console.log(res);
-            this.result = res;
-            Toast.clear();
-            this.$router.push("searchResult");
-          })
+          this.$router.push({name: "searchResult",params:{depCity: depCity,arrCity: arrCity,depDate: depDate}});
         }
       },
       convertCity() {

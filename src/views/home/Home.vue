@@ -33,7 +33,7 @@
       TicketSearch,
       Scroll
     },
-    data() {8
+    data() {
       return {
         result: null
       }
