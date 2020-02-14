@@ -3,7 +3,7 @@
     <h2>hello result</h2>
     <nav-bar class="search-ticket-nav">
       <div slot="left"  @click="backClick"><img src="~assets/img/navbar/back.svg"></div>
-      <div slot="center"><span class="left-nav-span">{{this.depCity}}</span> <span><img src="~assets/img/navbar/to.svg"></span><span class="right-nav-span">{{arrCity}}</span></div>
+      <div slot="center"><span class="left-nav-span">{{this.$route.params.depCity}}</span> <span><img src="~assets/img/navbar/to.svg"></span><span class="right-nav-span">{{this.$route.params.arrCity}}</span></div>
       <div slot="right"  @click="homeClick"><img src="~assets/img/navbar/home.svg"></div>
     </nav-bar>
     <result-item></result-item>
@@ -27,18 +27,14 @@
     },
     data() {
       return{
-        depCity: 'beijing',
-        arrCity: 'shanghai',
-        depDate:'',
         result:''
       }
     },
     beforeCreate() {
-      this.depCity = this.$route.params.depCity
-      this.arrCity = this.$route.params.arrCity
-      this.depDate = this.$route.params.depDate
-      console.log(this.depCity)
-      getTicketInfo(this.depCity,this.arrCity,this.depDate).then(res => {
+      const depCity = this.$route.params.depCity
+      const arrCity = this.$route.params.arrCity
+      const depDate = this.$route.params.depDate
+      getTicketInfo(depCity,arrCity,depDate).then(res => {
         // console.log(res);
         this.result = res;
         Toast.clear();
