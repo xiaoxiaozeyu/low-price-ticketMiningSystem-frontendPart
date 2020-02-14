@@ -88,6 +88,7 @@
     /*padding-top: 10px;*/
     margin-top: 10px;
     background: #ffffff;
+    border-radius: 5px;
   }
   .inner {
     display: flex;
@@ -110,6 +111,7 @@
   #ticketsearch {
     margin: 10px 5px;
     background: #ffffff;
+    border-radius: 5px;
   }
 
 </style>

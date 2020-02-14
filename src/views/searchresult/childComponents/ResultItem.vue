@@ -1,27 +1,22 @@
 <template>
   <div id="result-item">
     <div class="item">
-<!--      <div class="inner-item">-->
-<!--        <button>aa</button>-->
-<!--        <van-divider style="width:280px">文字</van-divider>-->
-<!--        <button>bb</button>-->
-<!--      </div>-->
       <div style="display: flex">
         <div class="top1">
-          <p class="p-margin">{{departureDate}}</p>
-          <p class="p-margin">{{departureAirportName}}</p>
+          <p class="p-margin display-time">{{ticketItem.departureDate.slice(11,16)}}</p>
+          <p class="p-margin display-airport">{{ticketItem.departureAirportName}}</p>
         </div>
-        <div class="top2">------</div>
+        <div class="top2">----</div>
         <div class="top3">
-          <p class="p-margin">{{arrivalDate}}</p>
-          <p class="p-margin">{{arrivalAirportName}}</p>
+          <p class="p-margin display-time">{{ticketItem.arrivalDate.slice(11,16)}}</p>
+          <p class="p-margin display-airport">{{ticketItem.arrivalAirportName}}</p>
         </div>
-        <div class="top4">￥{{lowestPrice}}</div>
+        <div class="top4"><p>￥{{ticketItem.lowestPrice}}</p></div>
       </div>
-      <van-divider dashed :style="{ color: '#1989fa', borderColor: '#1989fa', margin:'8px 0px' }" />
+      <van-divider dashed :style="{ color: '#000000', borderColor: '#000000', margin:'8px 0px' }" />
       <div class="item-bottom">
-        <p style="flex:1;margin: 0px">{{airlineName}}|{{flightNumber}}</p>
-        <p style="margin: 0px">来源：{{sourceFrom}}</p>
+        <p class="display-airport" style="flex:1;margin: 0px">{{ticketItem.airlineName}}|{{ticketItem.flightNumber}}</p>
+        <p class="display-airport" style="margin: 0px">来源：{{ticketItem.sourceFrom}}</p>
       </div>
     </div>
 
@@ -37,19 +32,8 @@
 
   export default {
     name: "ResultItem",
-    data() {
-      return {
-        airlineName:"东方航空",
-        arrivalAirportName:"浦东机场",
-        arrivalCityName:"上海",
-        arrivalDate:"10:00",
-        departureAirportName:"首都机场",
-        departureCityName:"北京",
-        departureDate:"07:35",
-        flightNumber:"MU5183",
-        lowestPrice:"650",
-        sourceFrom:"吉祥航空官网"
-      }
+    props: {
+      ticketItem:Object
     }
   }
 </script>
@@ -60,16 +44,13 @@
     padding-top: 5px;
     padding-bottom: 5px;
     background: #ffffff;
+    border-radius: 5px;
   }
   .item {
-    background-color: yellow;
+    /*background-color: yellow;*/
     width: 332px;
-    height: 100px;
+    height: 80px;
     margin: auto;
-  }
-  .inner-item {
-    display: flex;
-    height: 50px;
   }
   .item-bottom {
     display: flex;
@@ -78,16 +59,31 @@
   .p-margin {
     margin: 0px;
   }
+  .display-time {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .display-airport {
+    font-size: 14px;
+    color: grey;
+  }
   .top1 {
-    width: 95px;
+    width: 115px;
   }
   .top2 {
-    width: 62px;
+    width: 30px;
   }
   .top3 {
-    width: 95px;
+    width: 115px;
   }
   .top4 {
-    width: 80px;
+    width: 72px;
+    /*margin: auto;*/
+    display: flex;
+  }
+  .top4 p {
+    margin: auto;
+    font-size: 24px;
+    color: orange;
   }
 </style>

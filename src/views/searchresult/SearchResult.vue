@@ -6,7 +6,10 @@
       <div slot="center"><span class="left-nav-span">{{this.$route.params.depCity}}</span> <span><img src="~assets/img/navbar/to.svg"></span><span class="right-nav-span">{{this.$route.params.arrCity}}</span></div>
       <div slot="right"  @click="homeClick"><img src="~assets/img/navbar/home.svg"></div>
     </nav-bar>
-    <result-item></result-item>
+    <div v-for="item in result">
+      <result-item :ticket-item="item"></result-item>
+    </div>
+
     <P>{{result}}</P>
   </div>
 </template>
@@ -27,7 +30,7 @@
     },
     data() {
       return{
-        result:''
+        result:[]
       }
     },
     beforeCreate() {
@@ -39,6 +42,9 @@
         this.result = res;
         Toast.clear();
       })
+    },
+    updated() {
+      console.log(this.result)
     },
     methods: {
       backClick() {
@@ -73,10 +79,6 @@
   left: 90px;
   width: 75px;
   text-align: right;
-  /*display: inline-block;*/
-  /*height:38px;*/
-  /*line-height: 32px;*/
-  /*padding: 6px 0px 0px;*/
 }
   .right-nav-span {
     position: fixed;
