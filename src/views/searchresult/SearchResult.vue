@@ -6,11 +6,10 @@
       <div slot="center"><span class="left-nav-span">{{this.$route.params.depCity}}</span> <span><img src="~assets/img/navbar/to.svg"></span><span class="right-nav-span">{{this.$route.params.arrCity}}</span></div>
       <div slot="right"  @click="homeClick"><img src="~assets/img/navbar/home.svg"></div>
     </nav-bar>
-    <div v-for="(item,index) in result" :key="index">
+    <div v-for="(item,index) in result" :key="new Date()+index">
       <result-item :ticket-item="item"></result-item>
     </div>
 
-    <P>{{result}}</P>
   </div>
 </template>
 
@@ -32,25 +31,20 @@
     },
     data() {
       return{
-        result:[{lowestPrice:100},{lowestPrice: 1000},{lowestPrice: 630}]
+        result:[]
       }
     },
     beforeCreate() {
       const depCity = this.$route.params.depCity
       const arrCity = this.$route.params.arrCity
       const depDate = this.$route.params.depDate
-      // getTicketInfo(depCity,arrCity,depDate).then(res => {
-      //   // console.log(res);
-      //   this.result = res;
-      //   // this.result = this.sortResultByPrice(res)
-      //   Toast.clear();
-      //   this.result = sortResultByPrice(this.result.slice(0,3))
-      // })
-      this.result = sortResultByPrice(this.result)
-
+      getTicketInfo(depCity,arrCity,depDate).then(res => {
+        this.result = res;
+      })
     },
     updated() {
-      // console.log(this.result)
+      this.result = sortResultByPrice(this.result,this)
+      Toast.clear();
     },
     methods: {
       backClick() {
