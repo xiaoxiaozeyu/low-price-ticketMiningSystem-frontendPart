@@ -6,7 +6,7 @@
       <div slot="center"><span class="left-nav-span">{{this.$route.params.depCity}}</span> <span><img src="~assets/img/navbar/to.svg"></span><span class="right-nav-span">{{this.$route.params.arrCity}}</span></div>
       <div slot="right"  @click="homeClick"><img src="~assets/img/navbar/home.svg"></div>
     </nav-bar>
-    <div v-for="item in result">
+    <div v-for="(item,index) in result" :key="index">
       <result-item :ticket-item="item"></result-item>
     </div>
 
@@ -20,6 +20,8 @@
   import ResultItem from "./childComponents/ResultItem";
   import {Toast} from "vant";
   import {getTicketInfo} from 'network/home'
+  import {sortResultByPrice} from "common/util";
+
   Vue.use(Toast);
 
   export default {
@@ -30,21 +32,25 @@
     },
     data() {
       return{
-        result:[]
+        result:[{lowestPrice:100},{lowestPrice: 1000},{lowestPrice: 630}]
       }
     },
     beforeCreate() {
       const depCity = this.$route.params.depCity
       const arrCity = this.$route.params.arrCity
       const depDate = this.$route.params.depDate
-      getTicketInfo(depCity,arrCity,depDate).then(res => {
-        // console.log(res);
-        this.result = res;
-        Toast.clear();
-      })
+      // getTicketInfo(depCity,arrCity,depDate).then(res => {
+      //   // console.log(res);
+      //   this.result = res;
+      //   // this.result = this.sortResultByPrice(res)
+      //   Toast.clear();
+      //   this.result = sortResultByPrice(this.result.slice(0,3))
+      // })
+      this.result = sortResultByPrice(this.result)
+
     },
     updated() {
-      console.log(this.result)
+      // console.log(this.result)
     },
     methods: {
       backClick() {
