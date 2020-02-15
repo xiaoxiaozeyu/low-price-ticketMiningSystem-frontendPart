@@ -6,7 +6,7 @@
       <div slot="center"><span class="left-nav-span">{{this.$route.params.depCity}}</span> <span><img src="~assets/img/navbar/to.svg"></span><span class="right-nav-span">{{this.$route.params.arrCity}}</span></div>
       <div slot="right"  @click="homeClick"><img src="~assets/img/navbar/home.svg"></div>
     </nav-bar>
-    <div v-for="(item,index) in result" :key="new Date()+index">
+    <div v-for="(item,index) in result" :key="index">
       <result-item :ticket-item="item"></result-item>
     </div>
 
