@@ -1,29 +1,18 @@
 <template>
   <div id="home">
     <nav-bar class="home-nav"><div slot="center">首页</div></nav-bar>
-
-     <h2>Home Page</h2>
-     <!--  -->
-     <!--    <div><date-picker v-model="startDate"></date-picker></div>-->
-     <!--    <div v-if="result">-->
-     <!--      <h3>{{ result }}</h3>-->
-     <!--      <h3>{{ result.data }}</h3>-->
-     <!--      <h3>{{ result.ret }}</h3>-->
-     <!--    </div>-->
-     <ticket-search  ></ticket-search>
-
-
+    <!--轮播图组件-->
+    <home-swiper></home-swiper>
+    <!--搜索框组件-->
+    <ticket-search  ></ticket-search>
   </div>
 </template>
 
 <script>
   import NavBar from 'components/common/navbar/NavBar'
   import DatePicker from 'components/common/datepicker/DatePicker'
-  import Scroll from "../../components/common/scroll/Scroll";
-
+  import HomeSwiper from "./childComponents/HomeSwiper";
   import TicketSearch from "./childComponents/TicketSearch";
-
-  import {getHomeTestInfo} from 'network/home'
 
   export default {
     name: "Home",
@@ -31,21 +20,7 @@
       NavBar,
       DatePicker,
       TicketSearch,
-      Scroll
-    },
-    data() {
-      return {
-        result: null
-      }
-    },
-    methods: {
-
-    },
-    created() {
-      // getHomeTestInfo().then(res => {
-      //   console.log(res);
-      //   this.result = res;
-      // })
+      HomeSwiper
     }
   }
 </script>
