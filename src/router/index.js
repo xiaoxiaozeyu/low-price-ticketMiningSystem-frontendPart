@@ -6,6 +6,7 @@ const Flight = () => import('views/flight/Flight')
 const Schedule = () => import('views/schedule/Schedule')
 const Profile = () => import('views/profile/Profile')
 const SearchResult = () => import('views/searchresult/SearchResult')
+const Detail = () => import('views/detail/Detail')
 
 Vue.use(VueRouter)
 
@@ -50,6 +51,11 @@ const routes = [
     path: '/searchResult',
     name: 'searchResult',
     component: SearchResult
+  },
+  {
+    path: '/detail',
+    name: 'detail',
+    component: Detail
   }
 ]
 

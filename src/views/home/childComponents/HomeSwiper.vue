@@ -10,9 +10,6 @@
       <swiper-item>
         <img src='~assets/img/swiper/s3.jpg' alt=""   />
       </swiper-item>
-      <swiper-item>
-        <img src='~assets/img/swiper/s4.jpg' alt=""   />
-      </swiper-item>
     </swiper>
   </div>
 </template>

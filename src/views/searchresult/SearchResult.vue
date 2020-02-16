@@ -6,8 +6,8 @@
       <div slot="center"><span class="left-nav-span">{{this.$route.params.depCity}}</span> <span><img src="~assets/img/navbar/to.svg"></span><span class="right-nav-span">{{this.$route.params.arrCity}}</span></div>
       <div slot="right"  @click="homeClick"><img src="~assets/img/navbar/home.svg"></div>
     </nav-bar>
-    <div v-for="(item,index) in result" :key="index">
-      <result-item :ticket-item="item"></result-item>
+    <div v-for="(item,index) in result" :key="index" @click="jumpToDetail(item)">
+      <result-item :ticket-item="item" ></result-item>
     </div>
 
   </div>
@@ -52,6 +52,9 @@
       },
       homeClick() {
         this.$router.replace("/home")
+      },
+      jumpToDetail(data) {
+        this.$router.push({name: "detail",params:{resultItem:data}});
       }
     }
   }
@@ -74,12 +77,12 @@
   .search-ticket-nav img {
     padding-top: 6px;
   }
-.left-nav-span {
-  position: fixed;
-  left: 90px;
-  width: 75px;
-  text-align: right;
-}
+  .left-nav-span {
+    position: fixed;
+    left: 90px;
+    width: 75px;
+    text-align: right;
+  }
   .right-nav-span {
     position: fixed;
     right: 90px;
