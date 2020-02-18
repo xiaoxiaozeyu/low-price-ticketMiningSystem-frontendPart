@@ -22,7 +22,7 @@
 
 <script>
   import Vue from 'vue';
-  import DateSelect from "./DateSelect";
+  import DateSelect from "components/content/dateSelect/DateSelect";
   import SiteSelect from "./SiteSelect";
   import { Button } from 'vant';
 

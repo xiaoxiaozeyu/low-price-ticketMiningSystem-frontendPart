@@ -24,7 +24,7 @@
     // },
     data() {
       return {
-        date: '选择出行时间',
+        date: '选择时间',
         show: false
       };
     },
