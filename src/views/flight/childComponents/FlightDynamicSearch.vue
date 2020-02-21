@@ -22,6 +22,7 @@
   Vue.use(Field);
   Vue.use(CellGroup);
   Vue.use(Button);
+  Vue.use(Toast);
 
   export default {
     name: "FlightDynamicSearch",
@@ -50,7 +51,7 @@
             message: '航班动态查询中...',
             forbidClick: true
           });
-          this.$router.push({name: "flightDynamicResult",params:{searchDate: searchDate,searchFlightNum: searchFlightNum}});
+          this.$router.push({name: "flightDynamic",params:{searchDate: searchDate,searchFlightNum: searchFlightNum}});
         }
       }
     }

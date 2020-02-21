@@ -7,6 +7,7 @@ const Schedule = () => import('views/schedule/Schedule')
 const Profile = () => import('views/profile/Profile')
 const SearchResult = () => import('views/searchresult/SearchResult')
 const Detail = () => import('views/detail/Detail')
+const FlightDynamic = () => import('views/flightdynamic/FlightDynamic')
 
 Vue.use(VueRouter)
 
@@ -56,6 +57,11 @@ const routes = [
     path: '/detail',
     name: 'detail',
     component: Detail
+  },
+  {
+    path: '/flightDynamic',
+    name: 'flightDynamic',
+    component: FlightDynamic
   }
 ]
 
