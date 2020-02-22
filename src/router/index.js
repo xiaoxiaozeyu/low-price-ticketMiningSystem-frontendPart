@@ -8,6 +8,8 @@ const Profile = () => import('views/profile/Profile')
 const SearchResult = () => import('views/searchresult/SearchResult')
 const Detail = () => import('views/detail/Detail')
 const FlightDynamic = () => import('views/flightdynamic/FlightDynamic')
+const Login = () => import('views/login/Login')
+const Register = () => import('views/register/Register')
 
 Vue.use(VueRouter)
 
@@ -62,6 +64,16 @@ const routes = [
     path: '/flightDynamic',
     name: 'flightDynamic',
     component: FlightDynamic
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: Register
   }
 ]
 

@@ -48,6 +48,7 @@
     methods: {
       clickToLogin() {
         console.log("click login");
+        this.$router.push("/login");
       }
     }
   }
