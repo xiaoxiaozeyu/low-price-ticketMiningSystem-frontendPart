@@ -19,18 +19,6 @@
     components: {
       NavBar,
       FlightDynamicSearch
-    },
-    data() {
-      return {
-
-      }
-    },
-    computed: {
-
-    },
-
-    methods: {
-
     }
   }
 </script>

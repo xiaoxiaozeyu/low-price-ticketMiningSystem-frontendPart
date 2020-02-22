@@ -6,45 +6,41 @@
         <div slot="center"><span>航班动态</span></div>
         <div slot="right"  @click="homeClick"><img src="~assets/img/navbar/home.svg"></div>
       </nav-bar>
-    <div class="head">
-      <img src="~assets/img/swiper/s1.jpg">
-      <p>会员登陆</p>
-    </div>
+      <div class="head">
+        <img src="~assets/img/swiper/s1.jpg">
+        <p>会员登陆</p>
+      </div>
 
-    <div class="form">
-      <van-field
-        v-model="username"
-        name="用户名"
-        label="用户名"
-        placeholder="用户名"
-        :rules="[{ required: true, message: '请填写用户名' }]"
-      />
-      <van-field
-        v-model="password"
-        type="password"
-        name="密码"
-        label="密码"
-        placeholder="密码"
-        :rules="[{ required: true, message: '请填写密码' }]"
-      />
-      <div style="margin: 16px;">
-        <van-button round block type="info" native-type="submit" @click="onSubmit">
-          登录
-        </van-button>
+      <div class="form">
+        <van-field
+          v-model="username"
+          name="用户名"
+          label="用户名"
+          placeholder="用户名"
+          :rules="[{ required: true, message: '请填写用户名' }]"
+        />
+        <van-field
+          v-model="password"
+          type="password"
+          name="密码"
+          label="密码"
+          placeholder="密码"
+          :rules="[{ required: true, message: '请填写密码' }]"
+        />
+        <div style="margin: 16px;">
+          <van-button round block type="info" native-type="submit" @click="onSubmit">
+            登录
+          </van-button>
+        </div>
       </div>
     </div>
-    </div>
-    <!--    &lt;!&ndash; 允许输入整数，调起数字键盘 &ndash;&gt;-->
-    <!--    <van-field v-model="tel" type="digit" label="用户名" maxlength="11" placeholder="请输入手机号" label-width="60px" />-->
-    <!--    &lt;!&ndash; 输入密码 &ndash;&gt;-->
-    <!--    <van-field v-model="pwd" type="password" label="密码" placeholder="请输入密码" />-->
-
   </div>
 </template>
 
 <script>
   import Vue from 'vue';
   import NavBar from "components/common/navbar/NavBar";
+  import {getLoginToken} from "network/login";
   import { Field,Button } from 'vant';
   Vue.use(Button);
   Vue.use(Field);
@@ -57,12 +53,21 @@
     data() {
       return {
         username: '',
-        password: ''
+        password: '',
+        result:''
       }
     },
     methods: {
-      onSubmit(values) {
-        console.log('submit', values);
+      onSubmit() {
+        getLoginToken(this.username,this.password).then(res => {
+          if(eval(res.isHas.toLowerCase())) {
+            this.result=res.token
+            // $router.push
+          }else {
+            this.username='';
+            this.password='';
+          }
+        })
       },
       backClick() {
         this.$router.back()
