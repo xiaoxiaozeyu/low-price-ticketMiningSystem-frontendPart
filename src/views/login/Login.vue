@@ -62,7 +62,8 @@
         getLoginToken(this.username,this.password).then(res => {
           if(eval(res.isHas.toLowerCase())) {
             this.result=res.token
-            // $router.push
+            this.$store.commit('setUserInfo', res)
+            this.$router.replace("/home")
           }else {
             this.username='';
             this.password='';
