@@ -42,6 +42,7 @@
   import NavBar from "components/common/navbar/NavBar";
   import {getLoginToken} from "network/login";
   import { Field,Button } from 'vant';
+  import { Toast } from 'vant';
   Vue.use(Button);
   Vue.use(Field);
 
@@ -64,9 +65,11 @@
             this.result=res.token
             this.$store.commit('setUserInfo', res)
             this.$router.replace("/home")
+            Toast("登陆成功！")
           }else {
             this.username='';
             this.password='';
+            Toast("用户名或密码错误！")
           }
         })
       },

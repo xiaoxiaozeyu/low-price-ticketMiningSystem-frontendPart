@@ -1,21 +1,34 @@
 <template>
   <div>
-    <ticket-info :flightInfo="resultItem"></ticket-info>
-    <h2>{{resultItem}}</h2>
+    <div v-if="resultItem">
+      <ticket-info :flightInfo="resultItem"></ticket-info>
+
+      <passenger></passenger>
+      <detail-bottom-item :price="resultItem.lowestPrice"></detail-bottom-item>
+      <!--    <h2>{{resultItem}}</h2>-->
+    </div>
+    <div v-else style="font-size: 30px;font-weight: bold;color: red;margin: auto;text-align: center;vertical-align: center">error!
+      <detail-bottom-item :price="resultItem.lowestPrice"></detail-bottom-item>
+    </div>
+
   </div>
 </template>
 
 <script>
   import TicketInfo from "components/content/ticketInfo/TicketInfo";
+  import Passenger from "./childComponents/Passenger";
+  import DetailBottomItem from "./childComponents/detailBottomItem/DetailBottomItem";
 
   export default {
     name: "Detail",
     components: {
-      TicketInfo
+      TicketInfo,
+      Passenger,
+      DetailBottomItem
     },
     data() {
       return {
-        resultItem:{}
+        resultItem:''
       }
     },
     mounted() {
