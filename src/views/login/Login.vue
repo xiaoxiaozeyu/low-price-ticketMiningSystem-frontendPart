@@ -3,7 +3,7 @@
     <div class="main">
       <nav-bar class="login-nav">
         <div slot="left"  @click="backClick"><img src="~assets/img/navbar/back.svg"></div>
-        <div slot="center"><span>航班动态</span></div>
+        <div slot="center"><span>登录</span></div>
         <div slot="right"  @click="homeClick"><img src="~assets/img/navbar/home.svg"></div>
       </nav-bar>
       <div class="head">
@@ -27,6 +27,7 @@
           placeholder="密码"
           :rules="[{ required: true, message: '请填写密码' }]"
         />
+        <p style="text-align: right;font-size: 14px;color: #ffc24a" @click="toRegister">没有账号，点击注册</p>
         <div style="margin: 16px;">
           <van-button round block type="info" native-type="submit" @click="onSubmit">
             登录
@@ -59,6 +60,9 @@
       }
     },
     methods: {
+      toRegister() {
+        this.$router.replace('/register')
+      },
       onSubmit() {
         getLoginToken(this.username,this.password).then(res => {
           if(eval(res.isHas.toLowerCase())) {
