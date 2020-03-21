@@ -54,11 +54,11 @@
         showEdit: false,
         isEdit: false,
         list: [{
-          name: '蔡嘉诚',
-          tel: '18260069008',
+          name: '郭泽宇',
+          tel: '18070152182',
           id: 0
         },{
-          name: '唐爱全',
+          name: '张三',
           tel: '13773329218',
           id: 1
         }]
