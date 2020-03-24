@@ -1,7 +1,7 @@
 <template>
   <div id="schedule">
     <nav-bar class="schedule-nav"><div slot="center">我的行程</div></nav-bar>
-
+    <h2>界面美化中……</h2>
     <trip-item></trip-item>
     <trip-item></trip-item>
     <trip-item></trip-item>

@@ -1,6 +1,6 @@
 <template>
   <div id="search-result">
-    <h2>hello result</h2>
+<!--    <h2>hello result</h2>-->
     <nav-bar class="search-ticket-nav">
       <div slot="left"  @click="backClick"><img src="~assets/img/navbar/back.svg"></div>
       <div slot="center"><span class="left-nav-span">{{this.$route.params.depCity}}</span> <span><img src="~assets/img/navbar/to.svg"></span><span class="right-nav-span">{{this.$route.params.arrCity}}</span></div>
