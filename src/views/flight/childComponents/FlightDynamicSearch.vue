@@ -4,7 +4,7 @@
       <p>按航班号查询</p>
     </div>
     <van-cell-group>
-      <van-field class="flight-field" v-model="searchFlightNum" label="航班号" placeholder="输入航班号/如MU9022" input-align="right" maxlength="6" @input="stringToUppers" />
+      <van-field class="flight-field" v-model="searchFlightNum" label="航班号" placeholder="输入航班号/如CA1234" input-align="right" maxlength="6" @input="stringToUppers" />
     </van-cell-group>
     <date-select @get-date="getSelectDate"></date-select>
     <div class="outer">
