@@ -1,10 +1,14 @@
 <template>
   <div id="schedule">
     <nav-bar class="schedule-nav"><div slot="center">我的行程</div></nav-bar>
-    <h2>界面美化中……</h2>
-    <trip-item></trip-item>
-    <trip-item></trip-item>
-    <trip-item></trip-item>
+    <div style="display: flex">
+      <img style="height: auto;width: 97%;margin: auto;margin-top: 5px" src="~assets/img/schedule/scheduleHead.jpg">
+    </div>
+    <trip-item :dep-time="'2020-04-24'" :dep-city="'北京'" :arr-city="'上海'"></trip-item>
+    <trip-item :dep-time="'2020-05-01'" :dep-city="'南昌'" :arr-city="'南京'"></trip-item>
+    <trip-item :dep-time="'2020-05-05'" :dep-city="'南京'" :arr-city="'南昌'"></trip-item>
+    <trip-item :dep-time="'2020-07-24'" :dep-city="'南昌'" :arr-city="'厦门'"></trip-item>
+
   </div>
 </template>
 
