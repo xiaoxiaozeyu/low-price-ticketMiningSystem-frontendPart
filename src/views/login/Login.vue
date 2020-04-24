@@ -7,7 +7,7 @@
         <div slot="right"  @click="homeClick"><img src="~assets/img/navbar/home.svg"></div>
       </nav-bar>
       <div class="head">
-        <img src="~assets/img/swiper/s1.jpg">
+        <img src="~assets/img/profile/login.jpg">
         <p>会员登陆</p>
       </div>
 
