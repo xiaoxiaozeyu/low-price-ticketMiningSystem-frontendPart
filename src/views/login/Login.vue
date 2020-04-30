@@ -68,7 +68,7 @@
           if(eval(res.isHas.toLowerCase())) {
             this.result=res.token
             this.$store.commit('setUserInfo', res)
-            this.$router.replace("/home")
+            this.$router.replace("/profile")
             Toast("登陆成功！")
           }else {
             this.username='';

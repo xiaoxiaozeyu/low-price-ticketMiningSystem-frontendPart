@@ -1,7 +1,14 @@
 <template>
   <div id="profile">
     <nav-bar class="profile-nav"><div slot="center">我的</div></nav-bar>
-    <div class="profile-title"><img src="~assets/img/profile/defaultlogo.jpg"><van-cell class="cell" title="点击登录/注册" @click="clickToLogin" /></div>
+
+    <div v-if="this.$store.getters.userInfo.username">
+      <div class="profile-title"><img src="~assets/img/profile/defaultlogo.jpg"><p class="cell">{{this.$store.getters.userInfo.username}}</p></div>
+    </div>
+    <div v-else>
+      <div class="profile-title"><img src="~assets/img/profile/defaultlogo.jpg"><van-cell class="cell" title="点击登录/注册" @click="clickToLogin" /></div>
+    </div>
+
     <div>
     <van-cell-group class="profile-cell-group">
       <van-cell class="item-cell" title="我的订单" icon="cart" is-link />
