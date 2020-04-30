@@ -44,6 +44,7 @@
   import {getLoginToken} from "network/login";
   import { Field,Button } from 'vant';
   import { Toast } from 'vant';
+  import {registerUser} from "../../network/register";
   Vue.use(Button);
   Vue.use(Field);
 
@@ -64,18 +65,21 @@
         this.$router.replace("/login")
       },
       onSubmit() {
-        // getLoginToken(this.username,this.password).then(res => {
-        //   if(eval(res.isHas.toLowerCase())) {
-        //     this.result=res.token
-        //     this.$store.commit('setUserInfo', res)
-        //     this.$router.replace("/home")
-        //     Toast("登陆成功！")
-        //   }else {
-        //     this.username='';
-        //     this.password='';
-        //     Toast("用户名或密码错误！")
-        //   }
-        // })
+        registerUser(this.username,this.password).then(res => {
+          if(Number(res.status) == 200) {
+            this.$router.replace("/login")
+            Toast({
+              message: res.info
+            })
+          }else {
+            this.username='';
+            this.password='';
+            // Toast("用户名或密码错误！")
+            Toast({
+              message: res.info
+            })
+          }
+        })
       },
       backClick() {
         this.$router.back()
