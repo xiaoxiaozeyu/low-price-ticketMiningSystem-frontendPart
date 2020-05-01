@@ -4,7 +4,7 @@
       <ticket-info :flightInfo="resultItem"></ticket-info>
 
       <passenger></passenger>
-      <detail-bottom-item :price="resultItem.lowestPrice"></detail-bottom-item>
+      <detail-bottom-item :price="Number(resultItem.lowestPrice)" :flightInfo="resultItem" :passagername="passagername"></detail-bottom-item>
       <!--    <h2>{{resultItem}}</h2>-->
     </div>
     <div v-else style="font-size: 30px;font-weight: bold;color: red;margin: auto;text-align: center;vertical-align: center">error!
@@ -28,7 +28,8 @@
     },
     data() {
       return {
-        resultItem:''
+        resultItem:'',
+        passagername:'郭泽宇'
       }
     },
     mounted() {
