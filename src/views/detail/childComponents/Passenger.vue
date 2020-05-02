@@ -53,15 +53,17 @@
         showList: false,
         showEdit: false,
         isEdit: false,
-        list: [{
-          name: '郭泽宇',
-          tel: '18070152182',
-          id: 0
-        },{
-          name: '张三',
-          tel: '13773329218',
-          id: 1
-        }]
+        list: this.$store.getters.passengers
+
+        //   [{
+        //   name: '郭泽宇',
+        //   tel: '18070152182',
+        //   id: 0
+        // },{
+        //   name: '张三',
+        //   tel: '13773329218',
+        //   id: 1
+        // }]
       };
     },
 
@@ -79,7 +81,7 @@
     methods: {
       // 添加联系人
       onAdd() {
-        this.editingContact = { id: this.list.length };
+        this.editingContact = { id: this.list[0].id++ };
         this.isEdit = false;
         this.showEdit = true;
       },
@@ -93,6 +95,7 @@
 
       // 选中联系人
       onSelect() {
+        this.$store.commit('setPassengerName', this.currentContact.name)
         this.showList = false;
       },
 
@@ -107,6 +110,7 @@
           this.list.push(info);
         }
         this.chosenContactId = info.id;
+        this.$store.commit('setPassengerName', this.currentContact.name)
       },
 
       // 删除联系人

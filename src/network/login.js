@@ -11,3 +11,13 @@ export function getLoginToken(username,password) {
     }
   })
 }
+
+export function getPassengers(userid) {
+  return request({
+    method: 'post',
+    url: '/getPassengers',
+    data: {
+      userid:userid
+    }
+  })
+}

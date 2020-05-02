@@ -54,7 +54,14 @@
         this.$router.replace("/home")
       },
       jumpToDetail(data) {
-        this.$router.push({name: "detail",params:{resultItem:data}});
+        if(this.$store.getters.userInfo.token != null) {
+          this.$router.push({name: "detail",params:{resultItem:data}});
+        }else {
+          this.$router.replace("/login")
+          Toast("请先登录！")
+        }
+
+
       }
     }
   }

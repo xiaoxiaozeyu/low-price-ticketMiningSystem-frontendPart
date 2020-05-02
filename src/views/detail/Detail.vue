@@ -3,8 +3,8 @@
     <div v-if="resultItem">
       <ticket-info :flightInfo="resultItem"></ticket-info>
 
-      <passenger></passenger>
-      <detail-bottom-item :price="Number(resultItem.lowestPrice)" :flightInfo="resultItem" :passagername="passagername"></detail-bottom-item>
+      <passenger ref="childp"></passenger>
+      <detail-bottom-item :price="Number(resultItem.lowestPrice)" :flightInfo="resultItem"></detail-bottom-item>
       <!--    <h2>{{resultItem}}</h2>-->
     </div>
     <div v-else style="font-size: 30px;font-weight: bold;color: red;margin: auto;text-align: center;vertical-align: center">error!
@@ -29,7 +29,7 @@
     data() {
       return {
         resultItem:'',
-        passagername:'郭泽宇'
+        passagername:'defaultUser'
       }
     },
     mounted() {

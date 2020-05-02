@@ -44,8 +44,10 @@
   import {getLoginToken} from "network/login";
   import { Field,Button } from 'vant';
   import { Toast } from 'vant';
+  import {getPassengers} from "network/login";
   Vue.use(Button);
   Vue.use(Field);
+  Vue.use(Toast);
 
   export default {
     name: "Login",
@@ -68,8 +70,13 @@
           if(eval(res.isHas.toLowerCase())) {
             this.result=res.token
             this.$store.commit('setUserInfo', res)
-            this.$router.replace("/profile")
-            Toast("登陆成功！")
+            getPassengers(res.userid).then(innerres => {
+              if(innerres) {
+                this.$store.commit('setPassengers', innerres)
+              }
+              this.$router.replace("/profile")
+              Toast("登陆成功！")
+            })
           }else {
             this.username='';
             this.password='';

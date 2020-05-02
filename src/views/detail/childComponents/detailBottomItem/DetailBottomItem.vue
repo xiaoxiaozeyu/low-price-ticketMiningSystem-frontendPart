@@ -23,8 +23,7 @@
     name: "DetailBottomItem",
     props: {
       price:Number,
-      flightInfo: Object,
-      passagername:String
+      flightInfo: Object
     },
     methods: {
       onSubmit() {
@@ -50,7 +49,7 @@
           message: '点击确定购买机票'
         }).then(() => {
           // on confirm
-          purchaseTicket(this.flightInfo, this.passagername,Number(this.$store.getters.userInfo.userid)).then(res => {
+          purchaseTicket(this.flightInfo, this.$store.getters.passengerName,Number(this.$store.getters.userInfo.userid)).then(res => {
             console.log("by  in___")
             if(Number(res.status) == 200) {
               this.$router.replace("/home")
