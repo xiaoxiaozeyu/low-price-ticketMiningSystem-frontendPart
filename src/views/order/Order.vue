@@ -24,6 +24,7 @@
   import NavBar from 'components/common/navbar/NavBar'
   import OrderListItem from "./childComponents/OrderListItem";
   import {getTicketOrder} from "network/order";
+  import {sortOrderList} from "common/util";
 
   export default {
     name: "Order",
@@ -39,7 +40,8 @@
     beforeCreate() {
       getTicketOrder(this.$store.getters.userInfo.userid).then(res => {
         if(res) {
-          this.orderList = res
+          // this.result = sortResultByPrice(this.result,this)
+          this.orderList = sortOrderList(res,this)
         }else {
           this.orderList = null
         }

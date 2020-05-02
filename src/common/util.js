@@ -1,5 +1,4 @@
 //放防置工具方法
-
 const getYearMonthDay = (date) => {
   let year = date.getFullYear();
   let month = date.getMonth();
@@ -27,8 +26,27 @@ const sortResultByPrice = (data,obj) => {
   return data
 }
 
+const sortOrderList = (data,obj) => {
+  const len = data.length
+  for(let i = 0;i<len-1;i++) {
+    for(let j=0;j<len-i-1;j++) {
+      if(data[j].depDate > data[j+1].depDate) {
+        let temp = data[j];
+        // data[j] = data[j+1];
+        // data[j+1] = temp;
+        obj.$set(data, j, data[j+1]);
+        obj.$set(data, j+1, temp);
+      }
+    }
+  }
+  return data
+}
+
+
+
 export {
   getYearMonthDay,
   getDate,
-  sortResultByPrice
+  sortResultByPrice,
+  sortOrderList
 }
