@@ -11,8 +11,8 @@
 
     <div>
     <van-cell-group class="profile-cell-group">
-      <van-cell class="item-cell" title="我的订单" icon="cart" is-link />
-      <van-cell class="item-cell" title="我的行程" icon="todo-list" is-link />
+      <van-cell class="item-cell" title="我的订单" icon="cart" is-link @click="jumpToOrder" />
+      <van-cell class="item-cell" title="我的行程" icon="todo-list" is-link @click="jumpToSchedule" />
       <van-cell class="item-cell" title="我的账户" icon="manager" is-link />
     </van-cell-group>
   </div>
@@ -33,7 +33,7 @@
 <script>
   import NavBar from 'components/common/navbar/NavBar'
   import Vue from 'vue';
-  import { Cell, CellGroup } from 'vant';
+  import {Cell, CellGroup, Toast} from 'vant';
 
   Vue.use(Cell);
   Vue.use(CellGroup);
@@ -54,8 +54,18 @@
 
     methods: {
       clickToLogin() {
-        console.log("click login");
         this.$router.push("/login");
+      },
+      jumpToOrder() {
+        if(this.$store.getters.userInfo.token != null) {
+          this.$router.push("/order")
+        }else {
+          this.$router.replace("/login")
+          Toast("请先登录！")
+        }
+      },
+      jumpToSchedule() {
+        this.$router.push("/schedule")
       }
     }
   }

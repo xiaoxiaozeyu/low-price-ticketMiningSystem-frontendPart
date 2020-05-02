@@ -10,6 +10,7 @@ const Detail = () => import('views/detail/Detail')
 const FlightDynamic = () => import('views/flightdynamic/FlightDynamic')
 const Login = () => import('views/login/Login')
 const Register = () => import('views/register/Register')
+const Order = () => import('views/order/Order')
 
 Vue.use(VueRouter)
 
@@ -74,6 +75,11 @@ const routes = [
     path: '/register',
     name: 'register',
     component: Register
+  },
+  {
+    path: '/order',
+    name: 'order',
+    component: Order
   }
 ]
 
