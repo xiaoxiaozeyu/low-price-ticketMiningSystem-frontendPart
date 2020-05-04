@@ -15,6 +15,7 @@
   import { SubmitBar } from 'vant';
   import { Dialog,Toast } from 'vant';
   import { purchaseTicket} from "../../../../network/purchaseTicket";
+  import {addSchedule} from "../../../../network/schedule";
 
   Vue.use(SubmitBar);
   Vue.use(Dialog);
@@ -50,7 +51,6 @@
         }).then(() => {
           // on confirm
           purchaseTicket(this.flightInfo, this.$store.getters.passengerName,Number(this.$store.getters.userInfo.userid)).then(res => {
-            console.log("by  in___")
             if(Number(res.status) == 200) {
               this.$router.replace("/home")
               Toast({
@@ -62,6 +62,10 @@
                 message: res.info
               })
             }
+          })
+
+          addSchedule(this.flightInfo, Number(this.$store.getters.userInfo.userid)).then(res2 => {
+            console.log(res2)
           })
         }).catch(() => {
           // on cancel
