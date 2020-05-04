@@ -17,11 +17,12 @@
   import Vue from 'vue';
   import NavBar from 'components/common/navbar/NavBar'
   import ResultItem from "./childComponents/ResultItem";
-  import {Toast} from "vant";
+  import {Dialog, Toast} from "vant";
   import {getTicketInfo} from 'network/home'
   import {sortResultByPrice} from "common/util";
 
   Vue.use(Toast);
+  Vue.use(Dialog);
 
   export default {
     name: "SearchResult",
@@ -57,8 +58,12 @@
         if(this.$store.getters.userInfo.token != null) {
           this.$router.push({name: "detail",params:{resultItem:data}});
         }else {
-          this.$router.replace("/login")
-          Toast("请先登录！")
+          Dialog.alert({
+            message: '当前未登录，点击跳转至登陆界面！',
+          }).then(() => {
+            // on close
+            this.$router.replace("/login")
+          });
         }
 
 

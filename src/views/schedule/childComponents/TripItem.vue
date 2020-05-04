@@ -1,13 +1,13 @@
 <template>
   <div id="ticket-info">
-    <div class="head"><p>{{depTime}}</p></div>
+    <div class="head"><p>{{scheduleInfo.depDate}}</p><p>|{{scheduleInfo.passagerName}}</p></div>
     <div style="display: flex">
       <div class="b_left">
-        <p class="city">{{depCity}}</p>
+        <p class="city">{{scheduleInfo.depCity}}</p>
       </div>
       <div class="b_center">-------></div>
       <div class="b_right">
-        <p class="city">{{arrCity}}</p>
+        <p class="city">{{scheduleInfo.arrCity}}</p>
       </div>
     </div>
   </div>
@@ -17,6 +17,7 @@
   export default {
     name: "TicketInfo",
     props: {
+      scheduleInfo: Object,
       depTime: String,
       depCity: String,
       arrCity: String

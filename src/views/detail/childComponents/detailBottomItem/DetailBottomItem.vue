@@ -50,7 +50,7 @@
           message: '点击确定购买机票'
         }).then(() => {
           // on confirm
-          purchaseTicket(this.flightInfo, this.$store.getters.passengerName,Number(this.$store.getters.userInfo.userid)).then(res => {
+          purchaseTicket(this.flightInfo,this.$store.getters.passengerName,Number(this.$store.getters.userInfo.userid)).then(res => {
             if(Number(res.status) == 200) {
               this.$router.replace("/home")
               Toast({
@@ -64,7 +64,7 @@
             }
           })
 
-          addSchedule(this.flightInfo, Number(this.$store.getters.userInfo.userid)).then(res2 => {
+          addSchedule(this.flightInfo,this.$store.getters.passengerName,Number(this.$store.getters.userInfo.userid)).then(res2 => {
             console.log(res2)
           })
         }).catch(() => {

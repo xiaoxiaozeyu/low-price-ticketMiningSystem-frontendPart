@@ -1,20 +1,30 @@
 <template>
   <div id="schedule">
     <nav-bar class="schedule-nav"><div slot="center">我的行程</div></nav-bar>
-    <div style="display: flex">
-      <img style="height: auto;width: 97%;margin: auto;margin-top: 5px" src="~assets/img/schedule/scheduleHead.jpg">
+    <div v-if="scheduleList != null">
+      <div style="display: flex">
+        <img style="height: auto;width: 97%;margin: auto;margin-top: 5px" src="~assets/img/schedule/scheduleHead.jpg">
+      </div>
+      <div v-for="(item,index) in scheduleList" :key="index">
+        <trip-item :schedule-info="item"></trip-item>
+      </div>
     </div>
-    <trip-item :dep-time="'2020-04-24'" :dep-city="'北京'" :arr-city="'上海'"></trip-item>
-    <trip-item :dep-time="'2020-05-01'" :dep-city="'南昌'" :arr-city="'南京'"></trip-item>
-    <trip-item :dep-time="'2020-05-05'" :dep-city="'南京'" :arr-city="'南昌'"></trip-item>
-    <trip-item :dep-time="'2020-07-24'" :dep-city="'南昌'" :arr-city="'厦门'"></trip-item>
-
+    <div v-else>
+      <p>当前无行程安排。</p>
+    </div>
   </div>
 </template>
 
 <script>
   import TripItem from "./childComponents/TripItem";
   import NavBar from "components/common/navbar/NavBar";
+  import {getSchedule} from "../../network/schedule";
+  import Vue from 'vue';
+  import { Dialog } from 'vant';
+
+  // 全局注册
+  Vue.use(Dialog);
+
 
   export default {
     name: "Schedule",
@@ -24,15 +34,27 @@
     },
     data() {
       return {
-
+        scheduleList:Array
       }
     },
-    computed: {
-
-    },
-
-    methods: {
-
+    beforeCreate() {
+      if(this.$store.getters.userInfo.token != null) {
+        getSchedule(this.$store.getters.userInfo.userid).then(res => {
+          if(res) {
+            // this.result = sortResultByPrice(this.result,this)
+            this.scheduleList = res
+          }else {
+            this.scheduleList = null
+          }
+        })
+      }else {
+        Dialog.alert({
+          message: '当前未登录，点击跳转至登陆界面！',
+        }).then(() => {
+          // on close
+          this.$router.replace("/login")
+        });
+      }
     }
   }
 </script>

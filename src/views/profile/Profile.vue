@@ -33,10 +33,11 @@
 <script>
   import NavBar from 'components/common/navbar/NavBar'
   import Vue from 'vue';
-  import {Cell, CellGroup, Toast} from 'vant';
+  import {Cell, CellGroup, Dialog} from 'vant';
 
   Vue.use(Cell);
   Vue.use(CellGroup);
+  Vue.use(Dialog);
 
   export default {
     name: "Profile",
@@ -60,8 +61,12 @@
         if(this.$store.getters.userInfo.token != null) {
           this.$router.push("/order")
         }else {
-          this.$router.replace("/login")
-          Toast("请先登录！")
+          Dialog.alert({
+            message: '当前未登录，点击跳转至登陆界面！',
+          }).then(() => {
+            // on close
+            this.$router.replace("/login")
+          });
         }
       },
       jumpToSchedule() {
