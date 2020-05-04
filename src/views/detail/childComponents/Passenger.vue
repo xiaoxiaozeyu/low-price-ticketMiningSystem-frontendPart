@@ -38,6 +38,7 @@
   import Vue from 'vue';
   import { ContactCard, ContactList, ContactEdit } from 'vant';
   import { Popup } from 'vant';
+  import {addPassenger} from "../../../network/purchaseTicket";
 
   Vue.use(Popup);
   Vue.use(ContactCard);
@@ -111,6 +112,9 @@
         }
         this.chosenContactId = info.id;
         this.$store.commit('setPassengerName', this.currentContact.name)
+        addPassenger(this.currentContact.name,this.currentContact.tel,this.$store.getters.userInfo.userid).then(res => {
+          console.log(res.info)
+        })
       },
 
       // 删除联系人
