@@ -1,13 +1,11 @@
 <template>
   <div id="search-result">
-<!--    <h2>hello result</h2>-->
     <nav-bar class="search-ticket-nav">
       <div slot="left"  @click="backClick"><img src="~assets/img/navbar/back.svg"></div>
       <div slot="center"><span class="left-nav-span">{{this.$route.params.depCity}}</span> <span><img src="~assets/img/navbar/to.svg"></span><span class="right-nav-span">{{this.$route.params.arrCity}}</span></div>
       <div slot="right"  @click="homeClick"><img src="~assets/img/navbar/home.svg"></div>
     </nav-bar>
     <div v-for="(item,index) in result" :key="index" @click="showPopup(item)">
-<!--      jumpToDetail(item)-->
       <result-item :ticket-item="item" ></result-item>
     </div>
 
@@ -25,7 +23,6 @@
         <p style="text-align: center;font-size: 20px;font-weight: bold;color: #3098E3">{{clickData.departureAirportName}}=>{{clickData.arrivalAirportName}}</p>
         <p style="text-align: center;font-size: 20px;font-weight: bold;color: #3098E3">{{clickData.departureDate.slice(11,16)}}=>{{clickData.arrivalDate.slice(11,16)}}</p>
 
-<!--        <p>{{clickData}}</p>-->
         <div style="display: flex">
           <div style="margin: auto">
             <table width="360" style="text-align: center" >
@@ -40,7 +37,6 @@
                 <td><van-button plain hairline type="primary" size="small" @click="jumpToDetail(item)">购买机票</van-button></td>
               </tr>
             </table>
-
           </div>
         </div>
       </div>
@@ -112,8 +108,6 @@
             this.$router.replace("/login")
           });
         }
-
-
       }
     }
   }
