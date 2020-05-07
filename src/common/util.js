@@ -42,11 +42,21 @@ const sortOrderList = (data,obj) => {
   return data
 }
 
-
+const searchSameFlight = (data, flightNo) => {
+  const len = data.length
+  let flightList = []
+  for(let i = 0;i<len;i++) {
+      if(data[i].flightNumber.toUpperCase() == flightNo.toUpperCase()) {
+        flightList.push(data[i])
+      }
+  }
+  return flightList
+}
 
 export {
   getYearMonthDay,
   getDate,
   sortResultByPrice,
-  sortOrderList
+  sortOrderList,
+  searchSameFlight
 }
